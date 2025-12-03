@@ -5,9 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impax Asset Management | Investing in the Transition to a Sustainable Economy</title>
   <link rel="stylesheet" href="src/css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Note: Gotham is a licensed font. Add your font files or service link here -->
+  <!-- Example with local fonts:
+  <style>
+    @font-face {
+      font-family: 'Gotham';
+      src: url('src/assets/fonts/Gotham-Book.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Gotham';
+      src: url('src/assets/fonts/Gotham-Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Gotham';
+      src: url('src/assets/fonts/Gotham-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+  </style>
+  -->
 </head>
 <body>
   <!-- Navigation -->
@@ -34,15 +54,16 @@
 
   <!-- Hero Section -->
   <section class="hero">
+    <div class="hero-background">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="src/assets/hero-bg.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
     <div class="hero-content">
       <p class="hero-eyebrow">Specialist investors since 1998</p>
       <h1 class="hero-title">Investing in the <em>transition</em> to a more sustainable economy</h1>
       <p class="hero-subtitle">We believe well-managed companies exposed to the transition will deliver superior returns over the long term.</p>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-orb hero-orb--1"></div>
-      <div class="hero-orb hero-orb--2"></div>
-      <div class="hero-orb hero-orb--3"></div>
     </div>
   </section>
 
@@ -58,16 +79,12 @@
       <!-- Card 1 - Featured -->
       <article class="insight-card insight-card--featured" data-category="Report">
         <div class="card-inner">
-          <div class="card-front">
-            <div class="card-image" style="--bg-hue: 180"></div>
-            <div class="card-content">
-              <span class="card-category">Report</span>
-              <h3 class="card-title">The Role of Nature-Based Solutions in Climate Mitigation</h3>
-              <p class="card-date">November 2024</p>
-            </div>
-          </div>
-          <div class="card-back">
-            <p class="card-excerpt">Exploring how investing in natural ecosystems can provide significant carbon sequestration while delivering biodiversity benefits and sustainable returns for long-term investors.</p>
+          <div class="card-image" style="background-image: url('images/GettyImages-1286228815 1.png')"></div>
+          <div class="card-content">
+            <span class="card-category">Report</span>
+            <h3 class="card-title">The Role of Nature-Based Solutions in Climate Mitigation</h3>
+            <p class="card-date">November 2024</p>
+            <p class="card-excerpt">Exploring how investing in natural ecosystems can provide significant carbon sequestration while delivering biodiversity benefits and sustainable returns.</p>
             <a href="#" class="card-cta">Read full report →</a>
           </div>
         </div>
@@ -76,16 +93,12 @@
       <!-- Card 2 -->
       <article class="insight-card" data-category="Article">
         <div class="card-inner">
-          <div class="card-front">
-            <div class="card-image" style="--bg-hue: 160"></div>
-            <div class="card-content">
-              <span class="card-category">Article</span>
-              <h3 class="card-title">Water Scarcity: Investment Implications</h3>
-              <p class="card-date">October 2024</p>
-            </div>
-          </div>
-          <div class="card-back">
-            <p class="card-excerpt">Water stress affects over 2 billion people globally. We examine the companies positioned to address this critical challenge.</p>
+          <div class="card-image" style="background-image: url('images/dan-meyers-w6X7XaolqA0-unsplash 1.png')"></div>
+          <div class="card-content">
+            <span class="card-category">Article</span>
+            <h3 class="card-title">Water Scarcity: Investment Implications</h3>
+            <p class="card-date">October 2024</p>
+            <p class="card-excerpt">Water stress affects over 2 billion people globally. We examine the companies positioned to address this challenge.</p>
             <a href="#" class="card-cta">Read article →</a>
           </div>
         </div>
@@ -94,15 +107,11 @@
       <!-- Card 3 -->
       <article class="insight-card" data-category="Podcast">
         <div class="card-inner">
-          <div class="card-front">
-            <div class="card-image" style="--bg-hue: 200"></div>
-            <div class="card-content">
-              <span class="card-category">Podcast</span>
-              <h3 class="card-title">Energy Transition: Beyond the Headlines</h3>
-              <p class="card-date">October 2024</p>
-            </div>
-          </div>
-          <div class="card-back">
+          <div class="card-image" style="background-image: url('images/GettyImages-1308942742 1.png')"></div>
+          <div class="card-content">
+            <span class="card-category">Podcast</span>
+            <h3 class="card-title">Energy Transition: Beyond the Headlines</h3>
+            <p class="card-date">October 2024</p>
             <p class="card-excerpt">Our investment team discusses the nuanced reality of energy transition and identifies overlooked opportunities.</p>
             <a href="#" class="card-cta">Listen now →</a>
           </div>
@@ -112,15 +121,11 @@
       <!-- Card 4 -->
       <article class="insight-card" data-category="Research">
         <div class="card-inner">
-          <div class="card-front">
-            <div class="card-image" style="--bg-hue: 140"></div>
-            <div class="card-content">
-              <span class="card-category">Research</span>
-              <h3 class="card-title">Circular Economy: Closing the Loop</h3>
-              <p class="card-date">September 2024</p>
-            </div>
-          </div>
-          <div class="card-back">
+          <div class="card-image" style="background-image: url('images/12858696-hd_1920_1080_60fps 1.png')"></div>
+          <div class="card-content">
+            <span class="card-category">Research</span>
+            <h3 class="card-title">Circular Economy: Closing the Loop</h3>
+            <p class="card-date">September 2024</p>
             <p class="card-excerpt">How companies are rethinking product lifecycles to reduce waste and create new value streams.</p>
             <a href="#" class="card-cta">Read research →</a>
           </div>
@@ -130,15 +135,11 @@
       <!-- Card 5 -->
       <article class="insight-card" data-category="Video">
         <div class="card-inner">
-          <div class="card-front">
-            <div class="card-image" style="--bg-hue: 190"></div>
-            <div class="card-content">
-              <span class="card-category">Video</span>
-              <h3 class="card-title">Q3 2024 Market Commentary</h3>
-              <p class="card-date">September 2024</p>
-            </div>
-          </div>
-          <div class="card-back">
+          <div class="card-image" style="background-image: url('images/mike-cox-genrYOrKFwo-unsplash 1.png')"></div>
+          <div class="card-content">
+            <span class="card-category">Video</span>
+            <h3 class="card-title">Q3 2024 Market Commentary</h3>
+            <p class="card-date">September 2024</p>
             <p class="card-excerpt">Our CIO shares perspectives on market developments and positioning for sustainable growth.</p>
             <a href="#" class="card-cta">Watch video →</a>
           </div>
@@ -148,15 +149,11 @@
       <!-- Card 6 -->
       <article class="insight-card" data-category="Article">
         <div class="card-inner">
-          <div class="card-front">
-            <div class="card-image" style="--bg-hue: 170"></div>
-            <div class="card-content">
-              <span class="card-category">Article</span>
-              <h3 class="card-title">Biodiversity: The Next Frontier</h3>
-              <p class="card-date">August 2024</p>
-            </div>
-          </div>
-          <div class="card-back">
+          <div class="card-image" style="background-image: url('images/thierry-lemaitre-w7h4KYsuYk4-unsplash 1.png')"></div>
+          <div class="card-content">
+            <span class="card-category">Article</span>
+            <h3 class="card-title">Biodiversity: The Next Frontier</h3>
+            <p class="card-date">August 2024</p>
             <p class="card-excerpt">Understanding the investment risks and opportunities as biodiversity moves up the regulatory agenda.</p>
             <a href="#" class="card-cta">Read article →</a>
           </div>
