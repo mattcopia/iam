@@ -5,11 +5,13 @@
 
 :root {
   /* Brand Colors - Impax Palette */
-  --impax-deep-teal: #005f6b;
+  --impax-navy: #1a2e44;
+  --impax-navy-dark: #0f1c2d;
+  --impax-navy-light: #2a4460;
+  --impax-orange: #ff6b35;
+  --impax-orange-hover: #ff8555;
   --impax-teal: #00a5ac;
   --impax-cyan: #009fe3;
-  --impax-green: #5ab031;
-  --impax-blue: #007aa7;
 
   /* Extended Palette */
   --slate-900: #0f172a;
@@ -27,8 +29,9 @@
   --text-primary: var(--slate-900);
   --text-secondary: var(--slate-600);
   --text-muted: var(--slate-400);
-  --accent: var(--impax-teal);
-  --accent-dark: var(--impax-deep-teal);
+  --accent: var(--impax-orange);
+  --accent-hover: var(--impax-orange-hover);
+  --accent-dark: var(--impax-navy);
 
   /* Typography */
   --font-display: 'Gotham', 'Gotham SSm', system-ui, sans-serif;
@@ -143,23 +146,12 @@ button {
 
 .logo {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
 }
 
-.logo-text {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--impax-deep-teal);
-}
-
-.logo-tagline {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--text-muted);
+.logo-img {
+  height: 40px;
+  width: auto;
 }
 
 .nav-links {
@@ -208,7 +200,7 @@ button {
 }
 
 .nav-link--cta:hover {
-  background: var(--impax-teal);
+  background: var(--accent-hover);
   color: white;
   transform: translateY(-2px);
 }
@@ -259,9 +251,9 @@ button {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(0, 50, 60, 0.75) 0%,
-    rgba(0, 95, 107, 0.6) 50%,
-    rgba(0, 50, 60, 0.7) 100%
+    rgba(26, 46, 68, 0.85) 0%,
+    rgba(26, 46, 68, 0.7) 50%,
+    rgba(15, 28, 45, 0.8) 100%
   );
 }
 
@@ -388,7 +380,7 @@ button {
   .insight-card:hover .card-inner {
     transform: translateY(-8px) scale(1.02);
     box-shadow:
-      0 20px 40px rgba(0, 95, 107, 0.15),
+      0 20px 40px rgba(26, 46, 68, 0.2),
       0 8px 16px rgba(0, 0, 0, 0.1);
   }
 }
@@ -428,10 +420,10 @@ button {
   .insight-card:hover .card-content {
     background: linear-gradient(
       to top,
-      rgba(0, 50, 60, 0.92) 0%,
-      rgba(0, 50, 60, 0.8) 50%,
-      rgba(0, 50, 60, 0.5) 80%,
-      rgba(0, 50, 60, 0.3) 100%
+      rgba(26, 46, 68, 0.95) 0%,
+      rgba(26, 46, 68, 0.85) 50%,
+      rgba(26, 46, 68, 0.5) 80%,
+      rgba(26, 46, 68, 0.3) 100%
     );
   }
 }
