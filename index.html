@@ -32,17 +32,170 @@
 <body>
   <!-- Navigation -->
   <header class="header">
+    <!-- Top utility nav -->
+    <div class="nav-utility">
+      <div class="nav-utility-inner">
+        <button class="nav-utility-btn">
+          <span class="flag-icon">🇬🇧</span>
+          Investor Type
+          <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <a href="#" class="nav-utility-link">Investor Hub</a>
+        <a href="#" class="nav-utility-link">Media</a>
+        <button class="nav-utility-btn nav-search-btn" aria-label="Search">
+          Search
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main nav -->
     <nav class="nav">
       <a href="/" class="logo">
         <img src="images/Impax company logo 1.png" alt="Impax Asset Management" class="logo-img">
       </a>
+
       <ul class="nav-links">
-        <li><a href="#" class="nav-link">About</a></li>
-        <li><a href="#" class="nav-link">Strategies</a></li>
-        <li><a href="#" class="nav-link">Insights</a></li>
-        <li><a href="#" class="nav-link">Sustainability</a></li>
-        <li><a href="#" class="nav-link nav-link--cta">Contact</a></li>
+        <!-- About -->
+        <li class="nav-item has-mega">
+          <button class="nav-link" aria-expanded="false">
+            About
+            <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="mega-menu">
+            <div class="mega-menu-inner">
+              <div class="mega-col mega-col--intro">
+                <h3 class="mega-title">About</h3>
+                <p class="mega-desc">We are a specialist asset manager investing in the transition to a more sustainable economy</p>
+              </div>
+              <div class="mega-col mega-col--links">
+                <ul class="mega-links">
+                  <li><a href="#">About Impax <span class="link-arrow">→</span></a></li>
+                  <li><a href="#">Our Team <span class="link-arrow">→</span></a></li>
+                  <li><a href="#">Investment Philosophy <span class="link-arrow">→</span></a></li>
+                  <li><a href="#">Careers <span class="link-arrow">→</span></a></li>
+                </ul>
+              </div>
+              <div class="mega-col mega-col--featured">
+                <div class="mega-featured">
+                  <div class="mega-featured-img" style="background-image: url('images/GettyImages-1286228815 1.png')"></div>
+                  <span class="mega-featured-label">Spotlight</span>
+                  <p class="mega-featured-title">We invest in the opportunities arising from the transition to a more sustainable global economy.</p>
+                  <a href="#" class="mega-featured-link">Listen <span class="link-arrow">→</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Sustainability -->
+        <li class="nav-item has-mega">
+          <button class="nav-link" aria-expanded="false">
+            Sustainability
+            <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="mega-menu">
+            <div class="mega-menu-inner">
+              <div class="mega-col mega-col--intro">
+                <h3 class="mega-title">Sustainability</h3>
+                <p class="mega-desc">Lorem ipsum dolor sit amet eget tempus nec imperdiet tincidunt. Semper lacinia mi lectus a dictumst egestas quam sagittis.</p>
+              </div>
+              <div class="mega-col mega-col--links">
+                <ul class="mega-links">
+                  <li><a href="#">Investment Sustainability <span class="link-arrow">→</span></a></li>
+                  <li><a href="#">Corporate Sustainability <span class="link-arrow">→</span></a></li>
+                  <li><a href="#">Key Sustainability Documents & Reports <span class="link-arrow">→</span></a></li>
+                </ul>
+              </div>
+              <div class="mega-col mega-col--featured">
+                <div class="mega-featured">
+                  <div class="mega-featured-img" style="background-image: url('images/GettyImages-1308942742 1.png')"></div>
+                  <p class="mega-featured-title">Impact Report 2025</p>
+                  <p class="mega-featured-desc">Lorem ipsum dolor sit amet eget tempus nec imperdiet tincidunt. Semper lacinia mi lectus a dictumst egestas quam sagittis.</p>
+                  <a href="#" class="mega-featured-link">Download <span class="link-arrow">↓</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Products -->
+        <li class="nav-item has-mega">
+          <button class="nav-link" aria-expanded="false">
+            Products
+            <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="mega-menu">
+            <div class="mega-menu-inner">
+              <div class="mega-col mega-col--intro">
+                <h3 class="mega-title">Products</h3>
+                <p class="mega-desc">Lorem ipsum dolor sit amet eget tempus nec imperdiet tincidunt. Semper lacinia mi lectus a dictumst egestas quam sagittis.</p>
+              </div>
+              <div class="mega-col mega-col--links">
+                <ul class="mega-links">
+                  <li><a href="#">Equities <span class="link-arrow">→</span></a></li>
+                  <li><a href="#">Fixed Income <span class="link-arrow">→</span></a></li>
+                  <li><a href="#">Multi-Asset <span class="link-arrow">→</span></a></li>
+                  <li><a href="#">Private Markets <span class="link-arrow">→</span></a></li>
+                </ul>
+              </div>
+              <div class="mega-col mega-col--featured">
+                <div class="mega-featured">
+                  <div class="mega-featured-img" style="background-image: url('images/dan-meyers-w6X7XaolqA0-unsplash 1.png')"></div>
+                  <p class="mega-featured-title">Fund Centre</p>
+                  <p class="mega-featured-desc">Lorem ipsum dolor sit amet eget tempus nec imperdiet tincidunt. Semper lacinia mi lectus a dictumst egestas quam sagittis.</p>
+                  <a href="#" class="mega-featured-link">Visit our Fund Centre <span class="link-arrow">→</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Insights -->
+        <li class="nav-item has-mega">
+          <button class="nav-link" aria-expanded="false">
+            Insights
+            <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="mega-menu">
+            <div class="mega-menu-inner">
+              <div class="mega-col mega-col--intro">
+                <h3 class="mega-title">Insights</h3>
+                <p class="mega-desc">Lorem ipsum dolor sit amet eget tempus nec imperdiet tincidunt. Semper lacinia mi lectus a dictumst egestas quam sagittis.</p>
+                <a href="#" class="mega-cta">All insights <span class="link-arrow">→</span></a>
+              </div>
+              <div class="mega-col mega-col--links">
+                <ul class="mega-links">
+                  <li><a href="#" class="active">Markets <span class="link-arrow">→</span></a></li>
+                  <li><a href="#">Sustainability <span class="link-arrow">→</span></a></li>
+                  <li><a href="#">Investment Solutions <span class="link-arrow">→</span></a></li>
+                  <li><a href="#">Investment Trusts <span class="link-arrow">→</span></a></li>
+                  <li><a href="#">Private Assets <span class="link-arrow">→</span></a></li>
+                  <li><a href="#">Economics <span class="link-arrow">→</span></a></li>
+                </ul>
+              </div>
+              <div class="mega-col mega-col--featured mega-col--articles">
+                <div class="mega-article">
+                  <span class="mega-article-date">Month 00, 2025</span>
+                  <p class="mega-article-title">Shifting consumer habits drive the resilient growth of digital platforms</p>
+                  <a href="#" class="mega-article-link">Read insight <span class="link-arrow">→</span></a>
+                </div>
+                <div class="mega-article">
+                  <span class="mega-article-date">Month 00, 2025</span>
+                  <p class="mega-article-title">Why US reshoring is a credit tailwind for capital goods issuers</p>
+                  <a href="#" class="mega-article-link">Read insight <span class="link-arrow">→</span></a>
+                </div>
+                <div class="mega-article">
+                  <span class="mega-article-date">Month 00, 2025</span>
+                  <p class="mega-article-title">Capturing employee sentiment as an investment signal</p>
+                  <a href="#" class="mega-article-link">Read insight <span class="link-arrow">→</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
       </ul>
+
       <button class="mobile-menu-toggle" aria-label="Toggle menu">
         <span></span>
         <span></span>
@@ -54,15 +207,21 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-background">
-      <video class="hero-video" autoplay muted loop playsinline>
-        <source src="src/assets/hero-bg.mp4" type="video/mp4">
-      </video>
-      <div class="hero-overlay"></div>
+      <div class="hero-gradient"></div>
+      <div class="hero-waves">
+        <div class="wave wave-1"></div>
+        <div class="wave wave-2"></div>
+        <div class="wave wave-3"></div>
+        <div class="wave wave-4"></div>
+        <div class="wave wave-5"></div>
+      </div>
+      <img src="images/X.svg" alt="" class="hero-x-graphic" aria-hidden="true">
     </div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Specialist investors since 1998</p>
-      <h1 class="hero-title">Investing in the <em>transition</em> to a more sustainable economy</h1>
-      <p class="hero-subtitle">We believe well-managed companies exposed to the transition will deliver superior returns over the long term.</p>
+      <div class="hero-content-inner">
+        <h1 class="hero-title">Guided by sustainability, driven by performance</h1>
+        <p class="hero-subtitle">We believe well-managed companies exposed to the transition will deliver superior returns over the long term.</p>
+      </div>
     </div>
   </section>
 
@@ -168,10 +327,277 @@
     </div>
   </section>
 
-  <!-- Simple Footer -->
+  <!-- Explore Section -->
+  <section class="explore-section">
+    <div class="explore-split">
+      <!-- Left side - Navigation -->
+      <div class="explore-nav-side">
+        <h2 class="explore-title">Quick Links</h2>
+        <div class="explore-nav-items">
+          <button class="explore-nav-item active" data-target="about">
+            <span class="explore-nav-index">01</span>
+            <span class="explore-nav-title">About Impax</span>
+          </button>
+          <button class="explore-nav-item" data-target="philosophy">
+            <span class="explore-nav-index">02</span>
+            <span class="explore-nav-title">Our philosophy</span>
+          </button>
+          <button class="explore-nav-item" data-target="sustainability">
+            <span class="explore-nav-index">03</span>
+            <span class="explore-nav-title">Sustainability</span>
+          </button>
+          <button class="explore-nav-item" data-target="careers">
+            <span class="explore-nav-index">04</span>
+            <span class="explore-nav-title">Careers</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right side - Content panels -->
+      <div class="explore-content-side">
+        <div class="explore-content-panel active" data-panel="about">
+          <div class="explore-content-inner">
+            <div class="explore-content-header">
+              <span class="explore-content-number">01</span>
+              <h3 class="explore-content-title">About Impax</h3>
+            </div>
+            <div class="explore-content-body">
+              <p>We are a specialist asset manager focused on investing in the transition to a more sustainable economy. For over 25 years, we have been at the forefront of sustainable investing.</p>
+              <p>Our investment strategies seek to generate superior risk-adjusted returns while contributing to the achievement of a more sustainable society.</p>
+            </div>
+            <div class="explore-content-links">
+              <a href="#" class="explore-content-link">More about Impax <span class="arrow">→</span></a>
+              <a href="#" class="explore-content-link">Our team <span class="arrow">→</span></a>
+            </div>
+          </div>
+          <div class="explore-content-image" style="background-image: url('images/GettyImages-1286228815 1.png')"></div>
+        </div>
+
+        <div class="explore-content-panel" data-panel="philosophy">
+          <div class="explore-content-inner">
+            <div class="explore-content-header">
+              <span class="explore-content-number">02</span>
+              <h3 class="explore-content-title">Our philosophy</h3>
+            </div>
+            <div class="explore-content-body">
+              <p>We believe that capital markets will be shaped profoundly by global sustainability challenges, particularly climate change, environmental pollution, and the growing pressures on natural ecosystems and human health.</p>
+              <p>These trends will drive growth for well-positioned companies and create risks for those unable or unwilling to adapt.</p>
+            </div>
+            <div class="explore-content-links">
+              <a href="#" class="explore-content-link">Investment philosophy <span class="arrow">→</span></a>
+              <a href="#" class="explore-content-link">Our approach <span class="arrow">→</span></a>
+            </div>
+          </div>
+          <div class="explore-content-image" style="background-image: url('images/dan-meyers-w6X7XaolqA0-unsplash 1.png')"></div>
+        </div>
+
+        <div class="explore-content-panel" data-panel="sustainability">
+          <div class="explore-content-inner">
+            <div class="explore-content-header">
+              <span class="explore-content-number">03</span>
+              <h3 class="explore-content-title">Sustainability</h3>
+            </div>
+            <div class="explore-content-body">
+              <p>Sustainability is at the heart of everything we do. We integrate environmental, social and governance factors into our investment process and engage actively with the companies in which we invest.</p>
+              <p>We are committed to transparency and publish detailed reports on our sustainability practices and impact.</p>
+            </div>
+            <div class="explore-content-links">
+              <a href="#" class="explore-content-link">Sustainability approach <span class="arrow">→</span></a>
+              <a href="#" class="explore-content-link">Impact reports <span class="arrow">→</span></a>
+            </div>
+          </div>
+          <div class="explore-content-image" style="background-image: url('images/GettyImages-1308942742 1.png')"></div>
+        </div>
+
+        <div class="explore-content-panel" data-panel="careers">
+          <div class="explore-content-inner">
+            <div class="explore-content-header">
+              <span class="explore-content-number">04</span>
+              <h3 class="explore-content-title">Careers</h3>
+            </div>
+            <div class="explore-content-body">
+              <p>Join a team of passionate professionals dedicated to making a positive impact through investment. We offer a collaborative and inclusive working environment.</p>
+              <p>We are always looking for talented individuals who share our commitment to sustainability and excellence in investment management.</p>
+            </div>
+            <div class="explore-content-links">
+              <a href="#" class="explore-content-link">View open positions <span class="arrow">→</span></a>
+              <a href="#" class="explore-content-link">Life at Impax <span class="arrow">→</span></a>
+            </div>
+          </div>
+          <div class="explore-content-image" style="background-image: url('images/mike-cox-genrYOrKFwo-unsplash 1.png')"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- CAPABILITIES OPTION A: Large Hero Cards -->
+  <!-- ============================================= -->
+  <section class="cap-a">
+    <div class="cap-a__inner">
+      <div class="cap-a__header">
+        <h2 class="cap-a__title">Our Capabilities</h2>
+        <p class="cap-a__subtitle">Investment solutions designed for the transition to a sustainable economy</p>
+      </div>
+
+      <!-- Primary: Fixed Income & Equities as large cards -->
+      <div class="cap-a__primary">
+        <a href="#" class="cap-a__card cap-a__card--fi">
+          <div class="cap-a__card-bg"></div>
+          <div class="cap-a__card-content">
+            <span class="cap-a__label">Core Strategy</span>
+            <h3 class="cap-a__card-title">Fixed Income</h3>
+            <p class="cap-a__card-desc">Sustainable credit strategies across investment grade, high yield, and emerging markets.</p>
+            <span class="cap-a__card-cta">Explore Fixed Income <span class="arrow">→</span></span>
+          </div>
+        </a>
+
+        <a href="#" class="cap-a__card cap-a__card--eq">
+          <div class="cap-a__card-bg"></div>
+          <div class="cap-a__card-content">
+            <span class="cap-a__label">Core Strategy</span>
+            <h3 class="cap-a__card-title">Equities</h3>
+            <p class="cap-a__card-desc">Global and regional equity strategies focused on companies driving sustainable change.</p>
+            <span class="cap-a__card-cta">Explore Equities <span class="arrow">→</span></span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Secondary: Private Markets + CTAs -->
+      <div class="cap-a__secondary">
+        <a href="#" class="cap-a__card cap-a__card--pm">
+          <div class="cap-a__card-bg"></div>
+          <div class="cap-a__card-content">
+            <span class="cap-a__label">Alternative</span>
+            <h3 class="cap-a__card-title">Private Markets</h3>
+            <span class="cap-a__card-cta">Explore <span class="arrow">→</span></span>
+          </div>
+        </a>
+
+        <a href="#" class="cap-a__link">
+          <span>View all capabilities</span>
+          <img src="images/arrow-circle.svg" alt="" class="cap-a__link-arrow">
+        </a>
+
+        <a href="#" class="cap-a__link">
+          <span>Fund Centre</span>
+          <img src="images/arrow-circle.svg" alt="" class="cap-a__link-arrow">
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Publications & Impact Section -->
+  <section class="publications-combined">
+    <div class="publications-combined__inner">
+      <!-- Left: Impact Report Featured -->
+      <div class="publications-combined__featured">
+        <span class="publications-combined__label">Latest Publication</span>
+        <h2 class="publications-combined__title">Impact Report 2024</h2>
+        <p class="publications-combined__desc">See the measurable difference our sustainable investment approach is making — from carbon avoided to lives improved.</p>
+
+        <div class="publications-combined__stats">
+          <div class="publications-combined__stat">
+            <span class="publications-combined__stat-value">2.4M</span>
+            <span class="publications-combined__stat-label">Tonnes CO₂ avoided</span>
+          </div>
+          <div class="publications-combined__stat">
+            <span class="publications-combined__stat-value">89%</span>
+            <span class="publications-combined__stat-label">Portfolio aligned to SDGs</span>
+          </div>
+          <div class="publications-combined__stat">
+            <span class="publications-combined__stat-value">£44B</span>
+            <span class="publications-combined__stat-label">Assets under management</span>
+          </div>
+        </div>
+
+        <a href="#" class="publications-combined__btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+      </div>
+
+      <!-- Right: Other Publications -->
+      <div class="publications-combined__list">
+        <h3 class="publications-combined__list-title">Key Publications</h3>
+        <div class="publications-combined__links">
+          <a href="#" class="publication-link">
+            <span class="publication-link-text">Stewardship and advocacy report</span>
+            <img src="images/arrow-circle.svg" alt="" class="publication-link-arrow">
+          </a>
+          <a href="#" class="publication-link">
+            <span class="publication-link-text">Annual Report</span>
+            <img src="images/arrow-circle.svg" alt="" class="publication-link-arrow">
+          </a>
+          <a href="#" class="publication-link">
+            <span class="publication-link-text">Outlook 2025</span>
+            <img src="images/arrow-circle.svg" alt="" class="publication-link-arrow">
+          </a>
+          <a href="#" class="publication-link">
+            <span class="publication-link-text">Sustainability Report</span>
+            <img src="images/arrow-circle.svg" alt="" class="publication-link-arrow">
+          </a>
+          <a href="#" class="publication-link">
+            <span class="publication-link-text">Climate Report</span>
+            <img src="images/arrow-circle.svg" alt="" class="publication-link-arrow">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Subscribe Section -->
+  <section class="cta-duo">
+    <div class="cta-duo__inner">
+      <!-- Get in Touch -->
+      <div class="cta-duo__card cta-duo__card--contact">
+        <span class="cta-duo__label">We're here to help</span>
+        <h3 class="cta-duo__title">Let's start a conversation</h3>
+        <p class="cta-duo__desc">Whether you're an institutional investor, financial adviser, or exploring sustainable investment options, our team is ready to help.</p>
+        <a href="#" class="cta-duo__btn">
+          Get in touch
+          <span class="cta-duo__btn-arrow">→</span>
+        </a>
+      </div>
+
+      <!-- Subscribe to Insights -->
+      <div class="cta-duo__card cta-duo__card--subscribe">
+        <span class="cta-duo__label">Stay informed</span>
+        <h3 class="cta-duo__title">Subscribe to our insights</h3>
+        <p class="cta-duo__desc">Get our latest research, market commentary and investment perspectives delivered straight to your inbox.</p>
+        <form class="cta-duo__form">
+          <input type="email" placeholder="Enter your email address" class="cta-duo__input" required>
+          <button type="submit" class="cta-duo__submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
-    <div class="footer-content">
-      <p class="footer-text">© 2024 Impax Asset Management. Proof of concept.</p>
+    <div class="footer-inner">
+      <!-- Left side - Logo and copyright -->
+      <div class="footer-brand">
+        <img src="images/Impax company logo 1.png" alt="Impax Asset Management" class="footer-logo">
+        <p class="footer-copyright">© 2024 Impax Asset Management</p>
+      </div>
+
+      <!-- Right side - Navigation links -->
+      <div class="footer-nav">
+        <div class="footer-nav-col">
+          <a href="#" class="footer-link">Fund Centre</a>
+          <a href="#" class="footer-link">Strategies</a>
+          <a href="#" class="footer-link">Insights</a>
+          <a href="#" class="footer-link">Contact</a>
+        </div>
+        <div class="footer-nav-col">
+          <a href="#" class="footer-link">Sitemap</a>
+          <a href="#" class="footer-link">Accessibility</a>
+          <a href="#" class="footer-link">Terms of Use</a>
+          <a href="#" class="footer-link">Privacy & Cookies</a>
+        </div>
+      </div>
     </div>
   </footer>
 

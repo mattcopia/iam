@@ -116,6 +116,101 @@
   }
 
   // =============================================
+  // MEGA MENU
+  // =============================================
+
+  function initMegaMenu() {
+    const navItems = document.querySelectorAll('.nav-item.has-mega');
+    const header = document.querySelector('.header');
+    let closeTimeout;
+
+    // Set mega menu top position based on header height
+    function updateMegaMenuPosition() {
+      const headerHeight = header?.offsetHeight || 100;
+      document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+    }
+
+    updateMegaMenuPosition();
+    window.addEventListener('resize', updateMegaMenuPosition);
+
+    navItems.forEach(item => {
+      const button = item.querySelector('.nav-link');
+      const megaMenu = item.querySelector('.mega-menu');
+
+      // Open on hover
+      item.addEventListener('mouseenter', () => {
+        clearTimeout(closeTimeout);
+        // Close other menus
+        navItems.forEach(other => {
+          if (other !== item) {
+            other.classList.remove('active');
+            other.querySelector('.nav-link')?.setAttribute('aria-expanded', 'false');
+          }
+        });
+        item.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+      });
+
+      // Close on mouse leave with delay
+      item.addEventListener('mouseleave', () => {
+        closeTimeout = setTimeout(() => {
+          item.classList.remove('active');
+          button.setAttribute('aria-expanded', 'false');
+        }, 150);
+      });
+
+      // Keep open when hovering mega menu
+      megaMenu?.addEventListener('mouseenter', () => {
+        clearTimeout(closeTimeout);
+      });
+
+      megaMenu?.addEventListener('mouseleave', () => {
+        closeTimeout = setTimeout(() => {
+          item.classList.remove('active');
+          button.setAttribute('aria-expanded', 'false');
+        }, 150);
+      });
+
+      // Toggle on click for touch devices
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = item.classList.toggle('active');
+        button.setAttribute('aria-expanded', isOpen);
+
+        // Close other menus
+        if (isOpen) {
+          navItems.forEach(other => {
+            if (other !== item) {
+              other.classList.remove('active');
+              other.querySelector('.nav-link')?.setAttribute('aria-expanded', 'false');
+            }
+          });
+        }
+      });
+    });
+
+    // Close menus when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-item.has-mega')) {
+        navItems.forEach(item => {
+          item.classList.remove('active');
+          item.querySelector('.nav-link')?.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+
+    // Close menus on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        navItems.forEach(item => {
+          item.classList.remove('active');
+          item.querySelector('.nav-link')?.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+  }
+
+  // =============================================
   // INTERSECTION OBSERVER FOR ANIMATIONS
   // =============================================
 
@@ -197,19 +292,212 @@
 
   function initHeaderScroll() {
     const header = document.querySelector('.header');
-    let lastScroll = 0;
+    const hero = document.querySelector('.hero');
 
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
+    if (!header) return;
 
-      if (currentScroll > 100) {
-        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.06)';
+    function updateHeader() {
+      const heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
+
+      if (heroBottom <= 100) {
+        header.classList.add('scrolled');
       } else {
-        header.style.boxShadow = 'none';
+        header.classList.remove('scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader(); // Check initial state
+  }
+
+  // =============================================
+  // HERO MOUSE PARALLAX
+  // =============================================
+
+  function initHeroParallax() {
+    const hero = document.querySelector('.hero');
+    const gradient = document.querySelector('.hero-gradient');
+    const xGraphic = document.querySelector('.hero-x-graphic');
+
+    if (!hero || !gradient) return;
+
+    // Check for reduced motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let animationId;
+
+    hero.addEventListener('mousemove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Calculate offset from center (-1 to 1)
+      targetX = (e.clientX - rect.left - centerX) / centerX;
+      targetY = (e.clientY - rect.top - centerY) / centerY;
+    });
+
+    hero.addEventListener('mouseleave', () => {
+      targetX = 0;
+      targetY = 0;
+    });
+
+    function animate() {
+      // Smooth interpolation
+      currentX += (targetX - currentX) * 0.05;
+      currentY += (targetY - currentY) * 0.05;
+
+      // Apply subtle movement to gradient
+      const gradientX = currentX * 20;
+      const gradientY = currentY * 20;
+      gradient.style.transform = `translate(${gradientX}px, ${gradientY}px)`;
+
+      // Apply horizontal-only movement to X graphic (opposite direction for depth)
+      if (xGraphic) {
+        const xGraphicX = -currentX * 30;
+        xGraphic.style.transform = `translateY(-50%) translateX(${xGraphicX}px)`;
       }
 
-      lastScroll = currentScroll;
-    }, { passive: true });
+      animationId = requestAnimationFrame(animate);
+    }
+
+    animate();
+  }
+
+  // =============================================
+  // EXPLORE SECTION SPLIT-SCREEN
+  // =============================================
+
+  function initExploreSection() {
+    const navItems = document.querySelectorAll('.explore-nav-item');
+    const panels = document.querySelectorAll('.explore-content-panel');
+
+    if (!navItems.length || !panels.length) return;
+
+    // Show panel
+    function showPanel(targetId) {
+      // Update nav items
+      navItems.forEach(item => {
+        item.classList.toggle('active', item.getAttribute('data-target') === targetId);
+      });
+
+      // Update panels
+      panels.forEach(panel => {
+        panel.classList.toggle('active', panel.getAttribute('data-panel') === targetId);
+      });
+    }
+
+    // Nav item click handlers
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const targetId = item.getAttribute('data-target');
+        showPanel(targetId);
+      });
+
+      // Also trigger on hover for desktop
+      item.addEventListener('mouseenter', () => {
+        if (window.innerWidth >= 1024) {
+          const targetId = item.getAttribute('data-target');
+          showPanel(targetId);
+        }
+      });
+    });
+  }
+
+  // =============================================
+  // CAPABILITIES TILES - MOUSE PARALLAX ON X
+  // =============================================
+
+  function initCapabilitiesParallax() {
+    const tiles = document.querySelectorAll('.strategy-tile--fixed-income, .strategy-tile--equities, .strategy-tile--private');
+
+    if (!tiles.length) return;
+
+    // Check for reduced motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    tiles.forEach(tile => {
+      const patternX = tile.querySelector('.pattern-x');
+      if (!patternX) return;
+
+      // Store base rotation from CSS
+      const computedStyle = window.getComputedStyle(patternX);
+      const matrix = computedStyle.transform;
+      let baseRotation = 0;
+
+      // Extract rotation from transform matrix if exists
+      if (matrix && matrix !== 'none') {
+        const values = matrix.split('(')[1]?.split(')')[0]?.split(',');
+        if (values && values.length >= 2) {
+          baseRotation = Math.round(Math.atan2(parseFloat(values[1]), parseFloat(values[0])) * (180 / Math.PI));
+        }
+      }
+
+      let currentX = 0;
+      let currentY = 0;
+      let targetX = 0;
+      let targetY = 0;
+      let animationId = null;
+      let isHovering = false;
+
+      function animate() {
+        if (!isHovering) {
+          // Ease back to center
+          targetX = 0;
+          targetY = 0;
+        }
+
+        // Smooth interpolation
+        currentX += (targetX - currentX) * 0.08;
+        currentY += (targetY - currentY) * 0.08;
+
+        // Apply transform with base rotation preserved
+        const moveX = currentX * 40;
+        const moveY = currentY * 25;
+        patternX.style.transform = `rotate(${baseRotation}deg) translate(${moveX}px, ${moveY}px)`;
+
+        // Continue animating if still moving
+        if (Math.abs(targetX - currentX) > 0.01 || Math.abs(targetY - currentY) > 0.01) {
+          animationId = requestAnimationFrame(animate);
+        } else {
+          animationId = null;
+        }
+      }
+
+      tile.addEventListener('mouseenter', () => {
+        isHovering = true;
+      });
+
+      tile.addEventListener('mousemove', (e) => {
+        const rect = tile.getBoundingClientRect();
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        // Calculate offset from center (-1 to 1)
+        targetX = (e.clientX - rect.left - centerX) / centerX;
+        targetY = (e.clientY - rect.top - centerY) / centerY;
+
+        // Start animation if not running
+        if (!animationId) {
+          animationId = requestAnimationFrame(animate);
+        }
+      });
+
+      tile.addEventListener('mouseleave', () => {
+        isHovering = false;
+        // Start animation to ease back
+        if (!animationId) {
+          animationId = requestAnimationFrame(animate);
+        }
+      });
+    });
   }
 
   // =============================================
@@ -219,9 +507,13 @@
   function init() {
     initCarousel();
     initMobileMenu();
+    initMegaMenu();
     initScrollAnimations();
     initCardKeyboardNav();
     initHeaderScroll();
+    initHeroParallax();
+    initExploreSection();
+    initCapabilitiesParallax();
   }
 
   // Run when DOM is ready
