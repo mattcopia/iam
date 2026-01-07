@@ -501,6 +501,167 @@
   }
 
   // =============================================
+  // TIMELINE TAKEOVER
+  // =============================================
+
+  function initTimeline() {
+    const timelineItems = document.querySelectorAll('.timeline__item');
+    const takeover = document.querySelector('.timeline-takeover');
+    const closeBtn = document.querySelector('.timeline-takeover__close');
+    const prevBtn = document.querySelector('.timeline-takeover__prev');
+    const nextBtn = document.querySelector('.timeline-takeover__next');
+    const yearEl = document.querySelector('.timeline-takeover__year');
+    const titleEl = document.querySelector('.timeline-takeover__title');
+    const descEl = document.querySelector('.timeline-takeover__description');
+    const currentEl = document.querySelector('.timeline-takeover__current');
+    const totalEl = document.querySelector('.timeline-takeover__total');
+
+    if (!timelineItems.length || !takeover) return;
+
+    // Timeline data - Impax company history
+    const timelineData = [
+      {
+        year: '1998',
+        title: 'Impax Asset Management Founded',
+        description: 'Impax was founded in London with a pioneering vision: to invest in companies that are well-positioned to benefit from the transition to a more sustainable global economy. From the start, we believed that environmental and resource efficiency would become increasingly important drivers of business success.'
+      },
+      {
+        year: '2001',
+        title: 'Launch of First Investment Fund',
+        description: 'We launched our first fund, establishing ourselves as one of the earliest specialist environmental investment managers. This marked our commitment to building expertise in sectors positioned to benefit from sustainability trends including renewable energy, water treatment, and waste management.'
+      },
+      {
+        year: '2008',
+        title: 'Global Expansion Begins',
+        description: 'Impax expanded internationally, opening offices in key financial centres to serve our growing global client base. We strengthened our investment team and research capabilities, establishing dedicated coverage across environmental markets worldwide.'
+      },
+      {
+        year: '2014',
+        title: 'Listed on London Stock Exchange',
+        description: 'Impax Asset Management Group PLC was admitted to trading on AIM, a market operated by the London Stock Exchange. This milestone enabled us to accelerate our growth strategy and expand our product range while maintaining our focus on sustainable investing.'
+      },
+      {
+        year: '2018',
+        title: 'Merger with Pax World Funds',
+        description: 'We completed a transformational merger with Pax World Funds, one of the oldest sustainable investment firms in the United States, founded in 1971. This combination created a global leader in sustainable investing with significantly enhanced scale and distribution capabilities.'
+      },
+      {
+        year: '2021',
+        title: 'Assets Under Management Surpass £40 Billion',
+        description: 'Our assets under management grew past £40 billion as investor demand for sustainable investment solutions accelerated. Our expanded product range now includes equity, fixed income, and multi-asset strategies across global, regional, and thematic mandates.'
+      },
+      {
+        year: '2024',
+        title: 'Leading the Sustainable Investment Future',
+        description: 'Today, Impax manages over £44 billion in assets and continues to lead in sustainable investing. We remain committed to our founding belief that well-managed companies exposed to the transition to a more sustainable economy will deliver superior long-term returns.'
+      }
+    ];
+
+    let currentIndex = 0;
+
+    // Update the total count
+    if (totalEl) {
+      totalEl.textContent = timelineData.length;
+    }
+
+    // Update takeover content
+    function updateContent(index) {
+      const data = timelineData[index];
+      if (!data) return;
+
+      yearEl.textContent = data.year;
+      titleEl.textContent = data.title;
+      descEl.textContent = data.description;
+      currentEl.textContent = index + 1;
+
+      // Update button states
+      prevBtn.disabled = index === 0;
+      nextBtn.disabled = index === timelineData.length - 1;
+    }
+
+    // Open takeover
+    function openTakeover(index) {
+      currentIndex = index;
+      updateContent(index);
+      takeover.classList.add('active');
+      takeover.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      // Focus close button for accessibility
+      setTimeout(() => closeBtn.focus(), 100);
+    }
+
+    // Close takeover
+    function closeTakeover() {
+      takeover.classList.remove('active');
+      takeover.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+
+      // Return focus to the timeline item
+      timelineItems[currentIndex]?.focus();
+    }
+
+    // Navigate to previous/next
+    function goToPrev() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateContent(currentIndex);
+      }
+    }
+
+    function goToNext() {
+      if (currentIndex < timelineData.length - 1) {
+        currentIndex++;
+        updateContent(currentIndex);
+      }
+    }
+
+    // Event listeners for timeline items
+    timelineItems.forEach((item, index) => {
+      item.addEventListener('click', () => openTakeover(index));
+
+      // Keyboard support
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openTakeover(index);
+        }
+      });
+    });
+
+    // Close button
+    closeBtn?.addEventListener('click', closeTakeover);
+
+    // Navigation buttons
+    prevBtn?.addEventListener('click', goToPrev);
+    nextBtn?.addEventListener('click', goToNext);
+
+    // Backdrop click to close
+    takeover.addEventListener('click', (e) => {
+      if (e.target === takeover || e.target.classList.contains('timeline-takeover__backdrop')) {
+        closeTakeover();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!takeover.classList.contains('active')) return;
+
+      switch (e.key) {
+        case 'Escape':
+          closeTakeover();
+          break;
+        case 'ArrowLeft':
+          goToPrev();
+          break;
+        case 'ArrowRight':
+          goToNext();
+          break;
+      }
+    });
+  }
+
+  // =============================================
   // INITIALIZE
   // =============================================
 
@@ -514,6 +675,7 @@
     initHeroParallax();
     initExploreSection();
     initCapabilitiesParallax();
+    initTimeline();
   }
 
   // Run when DOM is ready
