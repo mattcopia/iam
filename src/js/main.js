@@ -513,6 +513,7 @@
     const yearEl = document.querySelector('.timeline-takeover__year');
     const titleEl = document.querySelector('.timeline-takeover__title');
     const descEl = document.querySelector('.timeline-takeover__description');
+    const imageEl = document.querySelector('.timeline-takeover__img');
     const currentEl = document.querySelector('.timeline-takeover__current');
     const totalEl = document.querySelector('.timeline-takeover__total');
 
@@ -523,37 +524,44 @@
       {
         year: '1998',
         title: 'Impax Asset Management Founded',
-        description: 'Impax was founded in London with a pioneering vision: to invest in companies that are well-positioned to benefit from the transition to a more sustainable global economy. From the start, we believed that environmental and resource efficiency would become increasingly important drivers of business success.'
+        description: 'Impax was founded in London with a pioneering vision: to invest in companies that are well-positioned to benefit from the transition to a more sustainable global economy. From the start, we believed that environmental and resource efficiency would become increasingly important drivers of business success.',
+        image: 'images/GettyImages-1286228815 1.png'
       },
       {
         year: '2001',
         title: 'Launch of First Investment Fund',
-        description: 'We launched our first fund, establishing ourselves as one of the earliest specialist environmental investment managers. This marked our commitment to building expertise in sectors positioned to benefit from sustainability trends including renewable energy, water treatment, and waste management.'
+        description: 'We launched our first fund, establishing ourselves as one of the earliest specialist environmental investment managers. This marked our commitment to building expertise in sectors positioned to benefit from sustainability trends including renewable energy, water treatment, and waste management.',
+        image: 'images/dan-meyers-w6X7XaolqA0-unsplash 1.png'
       },
       {
         year: '2008',
         title: 'Global Expansion Begins',
-        description: 'Impax expanded internationally, opening offices in key financial centres to serve our growing global client base. We strengthened our investment team and research capabilities, establishing dedicated coverage across environmental markets worldwide.'
+        description: 'Impax expanded internationally, opening offices in key financial centres to serve our growing global client base. We strengthened our investment team and research capabilities, establishing dedicated coverage across environmental markets worldwide.',
+        image: 'images/GettyImages-1308942742 1.png'
       },
       {
         year: '2014',
         title: 'Listed on London Stock Exchange',
-        description: 'Impax Asset Management Group PLC was admitted to trading on AIM, a market operated by the London Stock Exchange. This milestone enabled us to accelerate our growth strategy and expand our product range while maintaining our focus on sustainable investing.'
+        description: 'Impax Asset Management Group PLC was admitted to trading on AIM, a market operated by the London Stock Exchange. This milestone enabled us to accelerate our growth strategy and expand our product range while maintaining our focus on sustainable investing.',
+        image: 'images/mike-cox-genrYOrKFwo-unsplash 1.png'
       },
       {
         year: '2018',
         title: 'Merger with Pax World Funds',
-        description: 'We completed a transformational merger with Pax World Funds, one of the oldest sustainable investment firms in the United States, founded in 1971. This combination created a global leader in sustainable investing with significantly enhanced scale and distribution capabilities.'
+        description: 'We completed a transformational merger with Pax World Funds, one of the oldest sustainable investment firms in the United States, founded in 1971. This combination created a global leader in sustainable investing with significantly enhanced scale and distribution capabilities.',
+        image: 'images/thierry-lemaitre-DCTz3hPxj0g-unsplash 1.png'
       },
       {
         year: '2021',
         title: 'Assets Under Management Surpass £40 Billion',
-        description: 'Our assets under management grew past £40 billion as investor demand for sustainable investment solutions accelerated. Our expanded product range now includes equity, fixed income, and multi-asset strategies across global, regional, and thematic mandates.'
+        description: 'Our assets under management grew past £40 billion as investor demand for sustainable investment solutions accelerated. Our expanded product range now includes equity, fixed income, and multi-asset strategies across global, regional, and thematic mandates.',
+        image: 'images/12858696-hd_1920_1080_60fps 1.png'
       },
       {
         year: '2024',
         title: 'Leading the Sustainable Investment Future',
-        description: 'Today, Impax manages over £44 billion in assets and continues to lead in sustainable investing. We remain committed to our founding belief that well-managed companies exposed to the transition to a more sustainable economy will deliver superior long-term returns.'
+        description: 'Today, Impax manages over £44 billion in assets and continues to lead in sustainable investing. We remain committed to our founding belief that well-managed companies exposed to the transition to a more sustainable economy will deliver superior long-term returns.',
+        image: 'images/GettyImages-1286228815 1.png'
       }
     ];
 
@@ -573,6 +581,12 @@
       titleEl.textContent = data.title;
       descEl.textContent = data.description;
       currentEl.textContent = index + 1;
+
+      // Update image
+      if (imageEl && data.image) {
+        imageEl.src = data.image;
+        imageEl.alt = data.title;
+      }
 
       // Update button states
       prevBtn.disabled = index === 0;
